@@ -1,5 +1,4 @@
 function Game() {
-    // Конфигурация
     this.config = {
         width: 40,
         height: 24,
@@ -11,7 +10,6 @@ function Game() {
         tileSize: 20
     };
 
-    // Состояние игры
     this.state = {
         map: [],
         hero: { x: 0, y: 0, health: 100, maxHealth: 100, attack: 1 },
@@ -21,7 +19,6 @@ function Game() {
         gameWon: false
     };
 
-    // Типы клеток
     this.TILE = {
         WALL: 0,
         FLOOR: 1,
@@ -32,7 +29,6 @@ function Game() {
     };
 }
 
-// Методы игры
 Game.prototype = {
     init: function() {
         this.generateMap();
@@ -185,7 +181,7 @@ Game.prototype = {
         $('#hero-attack').text(this.state.hero.attack);
         
         if (this.state.gameOver) {
-            const message = this.state.gameWon ? "ПОБЕДА! Все враги уничтожены!" : "Игра окончена. Вы погибли.";
+            const message = this.state.gameWon ? "РџРћР‘Р•Р”Рђ! Р’СЃРµ РІСЂР°РіРё СѓРЅРёС‡С‚РѕР¶РµРЅС‹!" : "РРіСЂР° РѕРєРѕРЅС‡РµРЅР°. Р’С‹ РїРѕРіРёР±Р»Рё.";
             $('#game-message').text(message);
         } else {
             $('#game-message').empty();
